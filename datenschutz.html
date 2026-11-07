@@ -43,6 +43,14 @@
           App, wenn du das in den Systemeinstellungen erlaubst. Es wird kein Verlauf gespeichert; jede neue Position
           ersetzt die vorherige.</li>
         <li><b>„Gesehen“:</b> wann ein Familienmitglied eine Aufgabe oder einen Einkaufsartikel zum ersten Mal gesehen hat.</li>
+        <li><b>Orte und Ankunftsbenachrichtigungen (freiwillig):</b> Orte der Familie (Name wie „Zuhause“ oder „Schule“,
+          Mittelpunkt und Radius), wer wem folgt, und Ereignisse „angekommen“/„losgegangen“ (Person, Ort, Zeitpunkt). Ob du
+          einen Ort betrittst oder verlässt, erkennt das Betriebssystem deines Geräts; an den Server geht nur das Ereignis,
+          kein Bewegungsverlauf. Das gehört zur Standortfreigabe und funktioniert nur, solange du deinen Standort teilst.</li>
+        <li><b>Wichtige Tage:</b> Name, Tag und Monat (optional Jahr) von Geburtstagen und Jahrestagen, auch von
+          Personen außerhalb der App (z. B. Großeltern). Trage solche Daten bitte nur ein, wenn die Person damit
+          einverstanden ist.</li>
+        <li><b>Essensplan:</b> geplante Gerichte und ihre Zutaten.</li>
         <li><b>Benachrichtigungen:</b> eine Gerätekennung für Push-Benachrichtigungen (Firebase bzw. Apple) und die
           gewählte Sprache, damit Familien-Benachrichtigungen dein Gerät erreichen.</li>
         <li><b>Feedback:</b> deine Nachricht, ein optionales Bildschirmfoto sowie App-Version, Betriebssystem
@@ -69,7 +77,10 @@
       <p>Aufgaben sind für die Mitglieder deiner Familie sichtbar. Für jede Ausgabe und jeden Erlös wählst du,
         wer sie sieht: die ganze Familie (nur Mitglieder mit Kassenbuch-Freigabe), ausgewählte Personen oder nur du.
         Deine tägliche Schrittzahl für eine Schrittziel-Aufgabe sieht deine Familie (wer wie viel gelaufen ist).
-        Deinen Standort sehen nur die Familienmitglieder, die ihren eigenen Standort ebenfalls teilen.
+        Deinen Standort sehen nur die Familienmitglieder, die ihren eigenen Standort ebenfalls teilen. Eine
+        Ankunftsbenachrichtigung über dich erhalten nur Familienmitglieder, die dir folgen und selbst ihren Standort teilen;
+        wer wem folgt, ist auf der Familienkarte für die Familie sichtbar. Orte, wichtige Tage und der Essensplan sind für
+        die ganze Familie sichtbar.
         Personen außerhalb deiner Familie haben keinen Zugriff; das wird auf dem Server durchgesetzt.</p>
 
       <h2>5. Dienstleister (Auftragsverarbeiter)</h2>
@@ -103,7 +114,9 @@
       <p>Die Anmeldung wird verschlüsselt im Android-Keystore bzw. in der iOS-Schlüsselbund gespeichert. Für den
         schnellen Start und die Widgets werden Listen und die Schrittzahlen des Tages zwischengespeichert. Erinnerungen
         sind lokale Benachrichtigungen des Geräts. Familien-Benachrichtigungen (neue Aufgabe, Einkaufsliste) kommen
-        als Push-Benachrichtigung; du kannst sie unter Einstellungen → Benachrichtigungen ausschalten.</p>
+        als Push-Benachrichtigung; du kannst sie unter Einstellungen → Benachrichtigungen ausschalten. Für
+        Ankunftsbenachrichtigungen werden die Orte der Familie in der Ortserkennung (Geofencing) deines Geräts
+        registriert; Erinnerungen an wichtige Tage sind lokale Benachrichtigungen.</p>
 
       <h2>7. Speicherdauer und Löschung</h2>
       <p>Deine Daten bleiben gespeichert, solange dein Konto besteht. Unter <b>Einstellungen → Konto löschen</b>
@@ -113,6 +126,10 @@
         die Familie erhalten, aber ohne deinen Namen und deine E-Mail-Adresse. Ist niemand mehr in der Familie, wird
         auch die Familie mit allen Daten gelöscht. Sicherungskopien des Hosting-Anbieters werden nach dessen Fristen
         überschrieben.</p>
+
+      <p>Ereignisse „angekommen“/„losgegangen“ werden nach 7 Tagen gelöscht, Essenspläne nach 60 Tagen. Wer die Familie
+        verlässt, verliert seine Folgen-Beziehungen (in beide Richtungen); Schrittzahlen bei der alten Familie werden
+        gelöscht und die Standortfreigabe wird ausgeschaltet.</p>
 
       <h2>8. Deine Rechte</h2>
       <p>Du hast das Recht auf Auskunft, Berichtigung, Löschung, Einschränkung der Verarbeitung,
@@ -152,6 +169,13 @@
           doğruluk, zaman) saklanır ve düzenli güncellenir; sistem ayarlarında izin verirsen uygulama kapalıyken de.
           Geçmiş tutulmaz; her yeni konum öncekinin yerini alır.</li>
         <li><b>"Görüldü":</b> bir aile üyesinin bir görevi ya da alışveriş maddesini ilk ne zaman gördüğü.</li>
+        <li><b>Yerler ve varış bildirimleri (isteğe bağlı):</b> ailenin yerleri ("Ev", "Okul" gibi ad, merkez ve yarıçap),
+          kimin kimi takip ettiği ve "vardı"/"ayrıldı" olayları (kişi, yer, zaman). Bir yere girip çıktığını cihazının
+          işletim sistemi algılar; sunucuya yalnızca olay gider, hareket geçmişi gitmez. Konum paylaşımının parçasıdır ve
+          yalnızca konumunu paylaştığın sürece çalışır.</li>
+        <li><b>Önemli günler:</b> doğum günleri ve yıl dönümlerinin adı, günü ve ayı (isteğe bağlı yılı); uygulamayı
+          kullanmayan kişiler de olabilir (ör. büyükanne). Bu bilgileri lütfen yalnızca kişi kabul ediyorsa gir.</li>
+        <li><b>Yemek planı:</b> planlanan yemekler ve malzemeleri.</li>
         <li><b>Bildirimler:</b> aile bildirimlerinin cihazına ulaşması için bir bildirim cihaz kimliği (Firebase ya da
           Apple) ve seçtiğin dil.</li>
         <li><b>Geri bildirim:</b> mesajın, isteğe bağlı bir ekran görüntüsü, uygulama sürümü, işletim sistemi ve
@@ -174,7 +198,9 @@
       <h2>4. Verilerini kim görür</h2>
       <p>Görevleri ailenin üyeleri görür. Her gider ve gelir için kimin göreceğini sen seçersin: bütün aile (yalnızca
         kasa izni olan üyeler), seçtiğin kişiler ya da yalnızca sen. Adım hedefli bir görevdeki günlük adım sayını
-        ailen görür (kim ne kadar yürüdü). Konumunu yalnızca kendi konumunu da paylaşan aile üyeleri görür. Ailenin dışından kimse erişemez; bu sunucuda zorunlu tutulur.</p>
+        ailen görür (kim ne kadar yürüdü). Konumunu yalnızca kendi konumunu da paylaşan aile üyeleri görür. Senin hakkındaki varış bildirimini yalnızca seni
+        takip eden ve kendi konumunu da paylaşan aile üyeleri alır; kimin kimi takip ettiği aile haritasında aileye açıktır.
+        Yerler, önemli günler ve yemek planı bütün aileye açıktır. Ailenin dışından kimse erişemez; bu sunucuda zorunlu tutulur.</p>
 
       <h2>5. Hizmet sağlayıcılar</h2>
       <ul>
@@ -202,7 +228,9 @@
       <h2>6. Cihazındaki veriler</h2>
       <p>Oturum Android Keystore ya da iOS Anahtar Zinciri ile şifreli saklanır. Hızlı açılış ve widget için listeler
         ve günün adım sayıları önbellekte tutulur. Hatırlatmalar cihazın yerel bildirimleridir. Aile bildirimleri
-        (yeni görev, alışveriş listesi) push bildirimi olarak gelir; Ayarlar → Bildirimler'den kapatabilirsin.</p>
+        (yeni görev, alışveriş listesi) push bildirimi olarak gelir; Ayarlar → Bildirimler'den kapatabilirsin. Varış
+        bildirimleri için ailenin yerleri cihazının bölge algılamasına (geofencing) kaydedilir; önemli gün
+        hatırlatmaları yerel bildirimlerdir.</p>
 
       <h2>7. Saklama süresi ve silme</h2>
       <p>Verilerin hesabın durdukça saklanır. <b>Ayarlar → Hesabımı sil</b> ile hesabını kendin silebilirsin: hesap,
@@ -210,6 +238,9 @@
         birlikte silinir. Aileyle paylaştığın kayıtlar aile için kalır, ama adın ve e-posta adresin olmadan. Ailede
         başka kimse kalmazsa aile de bütün verisiyle silinir. Barındırma hizmetinin yedekleri kendi sürelerine göre
         üzerine yazılır.</p>
+
+      <p>"Vardı"/"ayrıldı" olayları 7 gün sonra, yemek planları 60 gün sonra silinir. Aileden ayrılan kişinin takip
+        ilişkileri (iki yönde) silinir, eski ailedeki adım sayıları silinir ve konum paylaşımı kapanır.</p>
 
       <h2>8. Hakların</h2>
       <p>Bilgi alma, düzeltme, silme, işlemeyi kısıtlama, veri taşınabilirliği (Ayarlar → Veriler → dışa aktarma) ve
@@ -247,6 +278,13 @@
           accuracy, time) is stored and updated regularly – also while the app is closed if you allow that in the system
           settings. No history is kept; each new position replaces the previous one.</li>
         <li><b>"Seen":</b> when a family member first saw a task or a shopping item.</li>
+        <li><b>Places and arrival notifications (optional):</b> the family's places (a name such as "Home" or "School",
+          centre and radius), who follows whom, and "arrived"/"left" events (person, place, time). Your device's operating
+          system detects entering or leaving a place; only the event is sent to the server, never a movement history. This
+          is part of location sharing and works only while you share your location.</li>
+        <li><b>Important days:</b> name, day and month (optionally year) of birthdays and anniversaries, also of people
+          who don't use the app (e.g. grandparents). Please only enter such data if the person agrees.</li>
+        <li><b>Meal plan:</b> planned meals and their ingredients.</li>
         <li><b>Notifications:</b> a push notification device token (Firebase or Apple) and your chosen language, so
           family notifications reach your device.</li>
         <li><b>Feedback:</b> your message, an optional screenshot, app version, operating system and device model
@@ -272,7 +310,9 @@
       <p>Tasks are visible to the members of your family. For each expense and income you choose who sees it: the
         whole family (only members with cash book access), selected people or only you. Your daily step count for a
         step goal task is visible to your family (who walked how much). Your location is visible only to family members
-        who share their own location too. Nobody outside your family has access; this is
+        who share their own location too. Only family members who follow you and share their own location receive an
+        arrival notification about you; who follows whom is visible to the family on the family map. Places, important
+        days and the meal plan are visible to the whole family. Nobody outside your family has access; this is
         enforced on the server.</p>
 
       <h2>5. Service providers (processors)</h2>
@@ -302,7 +342,8 @@
       <p>Your sign-in is stored encrypted in the Android Keystore or the iOS Keychain. Lists are cached for fast start-up
         and the widgets, together with today's step counts. Reminders are local notifications of the device. Family
         notifications (new task, shopping list) arrive as push notifications; you can turn them off under Settings →
-        Notifications.</p>
+        Notifications. For arrival notifications the family's places are registered with your device's geofencing;
+        reminders for important days are local notifications.</p>
 
       <h2>7. Retention and deletion</h2>
       <p>Your data is kept as long as your account exists. Under <b>Settings → Delete account</b> you can delete your
@@ -311,6 +352,10 @@
         are deleted together with their files. Entries you shared with the family stay with the family, but without your
         name and email address. If nobody else is left in the family, the family and all its data are deleted too. The
         hosting provider's backups are overwritten according to its schedule.</p>
+
+      <p>"Arrived"/"left" events are deleted after 7 days, meal plans after 60 days. When you leave a family your follow
+        relationships (both ways) are removed, your step counts with the old family are deleted and location sharing is
+        switched off.</p>
 
       <h2>8. Your rights</h2>
       <p>You have the right of access, rectification, erasure, restriction of processing, data portability (export under
