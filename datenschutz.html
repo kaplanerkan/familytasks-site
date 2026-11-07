@@ -11,7 +11,7 @@
   <main>
     <div class="card">
       <h1>Datenschutz · Gizlilik · Privacy</h1>
-      <p class="muted">Stand · Tarih · Last updated: 06.11.2026</p>
+      <p class="muted">Stand · Tarih · Last updated: 07.11.2026</p>
       <div class="lang">
         <a href="#de">Deutsch</a><a href="#tr">Türkçe</a><a href="#en">English</a>
       </div>
@@ -34,6 +34,13 @@
         <li><b>Familie:</b> Mitgliedschaft, Einladungscodes, Beitrittsanfragen, Freigabe des Kassenbuchs.</li>
         <li><b>Inhalte, die du eingibst:</b> Aufgaben, Erinnerungen, Kommentare, Ausgaben und Erlöse,
           wiederkehrende Zahlungen, Belege, Fotos und PDF-Dateien.</li>
+        <li><b>Schrittziel (Gesundheitsdaten, freiwillig):</b> Nur wenn du eine Aufgabe mit Schrittziel hast und den
+          Zugriff erlaubst, liest die App deine tägliche Schrittzahl aus Health Connect (Android) bzw. Apple Health
+          (iPhone). Gespeichert wird nur die Tagessumme für diese Aufgabe; andere Gesundheitsdaten werden weder
+          gelesen noch geschrieben.</li>
+        <li><b>„Gesehen“:</b> wann ein Familienmitglied eine Aufgabe oder einen Einkaufsartikel zum ersten Mal gesehen hat.</li>
+        <li><b>Benachrichtigungen:</b> eine Gerätekennung für Push-Benachrichtigungen (Firebase bzw. Apple) und die
+          gewählte Sprache, damit Familien-Benachrichtigungen dein Gerät erreichen.</li>
         <li><b>Feedback:</b> deine Nachricht, ein optionales Bildschirmfoto sowie App-Version, Betriebssystem
           und Gerätemodell (ohne weitere Gerätekennungen).</li>
         <li><b>Technische Daten:</b> Beim Zugriff auf den Server fallen kurzzeitig Protokolldaten an
@@ -45,10 +52,15 @@
         Geräten der Familie, Erinnerungen und Kassenbuch (Art. 6 Abs. 1 lit. b DSGVO). Feedback wird verarbeitet,
         um Fehler zu beheben und die App zu verbessern (Art. 6 Abs. 1 lit. f DSGVO). E-Mails werden nur für
         Kontobestätigung, Passwort-Zurücksetzung und Änderung der E-Mail-Adresse versendet.</p>
+      <p>Die Schrittzahl ist ein Gesundheitsdatum. Sie wird nur mit deiner ausdrücklichen Einwilligung verarbeitet
+        (Art. 9 Abs. 2 lit. a DSGVO), die du mit der Erlaubnis in Health Connect bzw. Apple Health erteilst. Du kannst
+        sie dort jederzeit widerrufen; dann werden keine Schritte mehr gelesen. Die Schritte werden nicht für Werbung,
+        Analyse oder andere Zwecke verwendet und nicht an Dritte weitergegeben.</p>
 
       <h2>4. Wer deine Daten sieht</h2>
       <p>Aufgaben sind für die Mitglieder deiner Familie sichtbar. Für jede Ausgabe und jeden Erlös wählst du,
         wer sie sieht: die ganze Familie (nur Mitglieder mit Kassenbuch-Freigabe), ausgewählte Personen oder nur du.
+        Deine tägliche Schrittzahl für eine Schrittziel-Aufgabe sieht deine Familie (wer wie viel gelaufen ist).
         Personen außerhalb deiner Familie haben keinen Zugriff; das wird auf dem Server durchgesetzt.</p>
 
       <h2>5. Dienstleister (Auftragsverarbeiter)</h2>
@@ -56,20 +68,27 @@
         <li><b>Supabase</b> (Supabase Inc., USA): Datenbank, Dateispeicher und Anmeldung. Die Daten liegen in einem
           Rechenzentrum in der EU (Irland). Für mögliche Zugriffe aus den USA gelten die EU-Standardvertragsklauseln.</li>
         <li><b>Google</b> (Google Ireland Ltd.): „Mit Google anmelden“ und der Versand der System-E-Mails über Gmail.</li>
-        <li><b>Apple</b> (Apple Distribution International Ltd.): „Mit Apple anmelden“ sowie die Verteilung der
-          iPhone-App über App Store und TestFlight.</li>
+        <li><b>Apple</b> (Apple Distribution International Ltd.): „Mit Apple anmelden“, die Verteilung der
+          iPhone-App über App Store und TestFlight sowie Push-Benachrichtigungen auf dem iPhone (Apple Push
+          Notification Service).</li>
+        <li><b>Google Firebase Cloud Messaging</b> (Google Ireland Ltd.): Zustellung der Familien-Benachrichtigungen
+          auf Android. Übertragen werden nur Gerätekennung, Titel und kurzer Text der Benachrichtigung.</li>
       </ul>
       <p>Texterkennung auf Belegen (Google ML Kit bzw. Apple Vision) und das Scannen des Einladungs-QR-Codes
-        laufen direkt auf deinem Gerät; Bilder werden dafür nicht an Google oder Apple gesendet.</p>
+        laufen direkt auf deinem Gerät; Bilder werden dafür nicht an Google oder Apple gesendet. Die Schrittzahl liest
+        die App direkt aus Health Connect bzw. Apple Health auf deinem Gerät; sie wird dafür nicht an Google oder Apple
+        gesendet.</p>
 
       <h2>6. Daten auf deinem Gerät</h2>
       <p>Die Anmeldung wird verschlüsselt im Android-Keystore bzw. in der iOS-Schlüsselbund gespeichert. Für den
-        schnellen Start und das Widget werden Listen zwischengespeichert. Erinnerungen sind lokale Benachrichtigungen
-        des Geräts; es gibt keine Push-Dienste.</p>
+        schnellen Start und die Widgets werden Listen und die Schrittzahlen des Tages zwischengespeichert. Erinnerungen
+        sind lokale Benachrichtigungen des Geräts. Familien-Benachrichtigungen (neue Aufgabe, Einkaufsliste) kommen
+        als Push-Benachrichtigung; du kannst sie unter Einstellungen → Benachrichtigungen ausschalten.</p>
 
       <h2>7. Speicherdauer und Löschung</h2>
       <p>Deine Daten bleiben gespeichert, solange dein Konto besteht. Unter <b>Einstellungen → Konto löschen</b>
-        löschst du dein Konto selbst: Konto, Profil, Feedback sowie alle Einträge, die nur du oder von dir
+        löschst du dein Konto selbst: Konto, Profil, Feedback, Schrittzahlen, „Gesehen“-Einträge und
+        Gerätekennungen für Benachrichtigungen sowie alle Einträge, die nur du oder von dir
         ausgewählte Personen sehen, werden mit ihren Dateien gelöscht. Mit der Familie geteilte Einträge bleiben für
         die Familie erhalten, aber ohne deinen Namen und deine E-Mail-Adresse. Ist niemand mehr in der Familie, wird
         auch die Familie mit allen Daten gelöscht. Sicherungskopien des Hosting-Anbieters werden nach dessen Fristen
@@ -106,6 +125,12 @@
         <li><b>Aile:</b> üyelik, davet kodları, katılma istekleri, kasa defteri izni.</li>
         <li><b>Girdiğin içerik:</b> görevler, hatırlatmalar, yorumlar, giderler ve gelirler, tekrarlayan ödemeler,
           fişler, fotoğraflar ve PDF dosyaları.</li>
+        <li><b>Adım hedefi (sağlık verisi, isteğe bağlı):</b> Yalnızca adım hedefli bir görevin varsa ve izin verirsen
+          uygulama günlük adım sayını Health Connect'ten (Android) ya da Apple Sağlık'tan (iPhone) okur. Yalnızca o
+          görevin günlük toplamı saklanır; başka hiçbir sağlık verisi okunmaz ya da yazılmaz.</li>
+        <li><b>"Görüldü":</b> bir aile üyesinin bir görevi ya da alışveriş maddesini ilk ne zaman gördüğü.</li>
+        <li><b>Bildirimler:</b> aile bildirimlerinin cihazına ulaşması için bir bildirim cihaz kimliği (Firebase ya da
+          Apple) ve seçtiğin dil.</li>
         <li><b>Geri bildirim:</b> mesajın, isteğe bağlı bir ekran görüntüsü, uygulama sürümü, işletim sistemi ve
           cihaz modeli (başka cihaz kimliği olmadan).</li>
         <li><b>Teknik veriler:</b> Sunucuya erişirken barındırma hizmetinin işletme ve güvenlik için kısa süre
@@ -116,30 +141,37 @@
       <p>Veriler yalnızca uygulamayı sunmak için işlenir: giriş, ailenin cihazları arasında eşitleme, hatırlatmalar
         ve kasa defteri (DSGVO md. 6/1-b). Geri bildirim hataları gidermek ve uygulamayı geliştirmek için işlenir
         (DSGVO md. 6/1-f). E-posta yalnızca hesap onayı, şifre sıfırlama ve e-posta adresi değişikliği için gönderilir.</p>
+      <p>Adım sayısı bir sağlık verisidir. Yalnızca açık rızanla işlenir (DSGVO md. 9/2-a); rızanı Health Connect ya da
+        Apple Sağlık'ta izin vererek verirsin ve oradan istediğin zaman geri alabilirsin, o zaman adım okunmaz. Adımlar
+        reklam, analiz ya da başka bir amaçla kullanılmaz ve üçüncü kişilere verilmez.</p>
 
       <h2>4. Verilerini kim görür</h2>
       <p>Görevleri ailenin üyeleri görür. Her gider ve gelir için kimin göreceğini sen seçersin: bütün aile (yalnızca
-        kasa izni olan üyeler), seçtiğin kişiler ya da yalnızca sen. Ailenin dışından kimse erişemez; bu sunucuda
-        zorunlu tutulur.</p>
+        kasa izni olan üyeler), seçtiğin kişiler ya da yalnızca sen. Adım hedefli bir görevdeki günlük adım sayını
+        ailen görür (kim ne kadar yürüdü). Ailenin dışından kimse erişemez; bu sunucuda zorunlu tutulur.</p>
 
       <h2>5. Hizmet sağlayıcılar</h2>
       <ul>
         <li><b>Supabase</b> (Supabase Inc., ABD): veritabanı, dosya deposu ve giriş. Veriler AB'deki (İrlanda) bir veri
           merkezindedir. ABD'den olası erişimler için AB standart sözleşme maddeleri geçerlidir.</li>
         <li><b>Google</b> (Google Ireland Ltd.): "Google ile giriş" ve sistem e-postalarının Gmail üzerinden gönderimi.</li>
-        <li><b>Apple</b> (Apple Distribution International Ltd.): "Apple ile giriş" ve iPhone uygulamasının App Store ve
-          TestFlight üzerinden dağıtımı.</li>
+        <li><b>Apple</b> (Apple Distribution International Ltd.): "Apple ile giriş", iPhone uygulamasının App Store ve
+          TestFlight üzerinden dağıtımı ve iPhone'da bildirimler (Apple Push Notification Service).</li>
+        <li><b>Google Firebase Cloud Messaging</b> (Google Ireland Ltd.): Android'de aile bildirimlerinin iletimi.
+          Yalnızca cihaz kimliği ile bildirimin başlığı ve kısa metni iletilir.</li>
       </ul>
       <p>Fişlerdeki metnin okunması (Google ML Kit ya da Apple Vision) ve davet QR kodunun okutulması doğrudan
-        cihazında çalışır; bunun için resimler Google'a ya da Apple'a gönderilmez.</p>
+        cihazında çalışır; bunun için resimler Google'a ya da Apple'a gönderilmez. Adım sayısını uygulama doğrudan
+        cihazındaki Health Connect ya da Apple Sağlık'tan okur; bunun için Google'a ya da Apple'a gönderilmez.</p>
 
       <h2>6. Cihazındaki veriler</h2>
       <p>Oturum Android Keystore ya da iOS Anahtar Zinciri ile şifreli saklanır. Hızlı açılış ve widget için listeler
-        önbellekte tutulur. Hatırlatmalar cihazın yerel bildirimleridir; push servisi yoktur.</p>
+        ve günün adım sayıları önbellekte tutulur. Hatırlatmalar cihazın yerel bildirimleridir. Aile bildirimleri
+        (yeni görev, alışveriş listesi) push bildirimi olarak gelir; Ayarlar → Bildirimler'den kapatabilirsin.</p>
 
       <h2>7. Saklama süresi ve silme</h2>
       <p>Verilerin hesabın durdukça saklanır. <b>Ayarlar → Hesabımı sil</b> ile hesabını kendin silebilirsin: hesap,
-        profil, geri bildirimler ve yalnızca senin ya da seçtiğin kişilerin gördüğü bütün kayıtlar dosyalarıyla
+        profil, geri bildirimler, adım sayıları, "görüldü" kayıtları, bildirim cihaz kimlikleri ve yalnızca senin ya da seçtiğin kişilerin gördüğü bütün kayıtlar dosyalarıyla
         birlikte silinir. Aileyle paylaştığın kayıtlar aile için kalır, ama adın ve e-posta adresin olmadan. Ailede
         başka kimse kalmazsa aile de bütün verisiyle silinir. Barındırma hizmetinin yedekleri kendi sürelerine göre
         üzerine yazılır.</p>
@@ -173,6 +205,12 @@
         <li><b>Family:</b> membership, invite codes, join requests, cash book access.</li>
         <li><b>Content you enter:</b> tasks, reminders, comments, expenses and income, recurring payments, receipts,
           photos and PDF files.</li>
+        <li><b>Step goal (health data, optional):</b> Only if you have a task with a step goal and allow access, the
+          app reads your daily step count from Health Connect (Android) or Apple Health (iPhone). Only the daily total
+          for that task is stored; no other health data is read or written.</li>
+        <li><b>"Seen":</b> when a family member first saw a task or a shopping item.</li>
+        <li><b>Notifications:</b> a push notification device token (Firebase or Apple) and your chosen language, so
+          family notifications reach your device.</li>
         <li><b>Feedback:</b> your message, an optional screenshot, app version, operating system and device model
           (no other device identifiers).</li>
         <li><b>Technical data:</b> when the server is accessed, the hosting provider briefly keeps log data
@@ -183,30 +221,41 @@
       <p>Data is processed only to provide the app: sign-in, syncing between the family's devices, reminders and the
         cash book (Art. 6(1)(b) GDPR). Feedback is processed to fix bugs and improve the app (Art. 6(1)(f) GDPR).
         Emails are sent only for account confirmation, password reset and email address changes.</p>
+      <p>Your step count is health data. It is processed only with your explicit consent (Art. 9(2)(a) GDPR), which you
+        give by granting access in Health Connect or Apple Health. You can withdraw it there at any time; steps are then
+        no longer read. Steps are not used for advertising, analytics or any other purpose and are not shared with
+        third parties.</p>
 
       <h2>4. Who sees your data</h2>
       <p>Tasks are visible to the members of your family. For each expense and income you choose who sees it: the
-        whole family (only members with cash book access), selected people or only you. Nobody outside your family
-        has access; this is enforced on the server.</p>
+        whole family (only members with cash book access), selected people or only you. Your daily step count for a
+        step goal task is visible to your family (who walked how much). Nobody outside your family has access; this is
+        enforced on the server.</p>
 
       <h2>5. Service providers (processors)</h2>
       <ul>
         <li><b>Supabase</b> (Supabase Inc., USA): database, file storage and sign-in. Data is stored in a data center
           in the EU (Ireland). EU Standard Contractual Clauses apply to any access from the USA.</li>
         <li><b>Google</b> (Google Ireland Ltd.): "Sign in with Google" and sending system emails through Gmail.</li>
-        <li><b>Apple</b> (Apple Distribution International Ltd.): "Sign in with Apple" and distributing the iPhone app
-          through the App Store and TestFlight.</li>
+        <li><b>Apple</b> (Apple Distribution International Ltd.): "Sign in with Apple", distributing the iPhone app
+          through the App Store and TestFlight, and notifications on the iPhone (Apple Push Notification service).</li>
+        <li><b>Google Firebase Cloud Messaging</b> (Google Ireland Ltd.): delivering family notifications on Android.
+          Only the device token and the notification's title and short text are transmitted.</li>
       </ul>
       <p>Reading text on receipts (Google ML Kit or Apple Vision) and scanning the invite QR code run directly on your
-        device; images are not sent to Google or Apple for this.</p>
+        device; images are not sent to Google or Apple for this. The app reads your step count directly from Health
+        Connect or Apple Health on your device; it is not sent to Google or Apple for this.</p>
 
       <h2>6. Data on your device</h2>
       <p>Your sign-in is stored encrypted in the Android Keystore or the iOS Keychain. Lists are cached for fast start-up
-        and the widget. Reminders are local notifications of the device; there are no push services.</p>
+        and the widgets, together with today's step counts. Reminders are local notifications of the device. Family
+        notifications (new task, shopping list) arrive as push notifications; you can turn them off under Settings →
+        Notifications.</p>
 
       <h2>7. Retention and deletion</h2>
       <p>Your data is kept as long as your account exists. Under <b>Settings → Delete account</b> you can delete your
-        account yourself: your account, profile, feedback and all entries that only you or people you selected can see
+        account yourself: your account, profile, feedback, step counts, "seen" records, notification device tokens and
+        all entries that only you or people you selected can see
         are deleted together with their files. Entries you shared with the family stay with the family, but without your
         name and email address. If nobody else is left in the family, the family and all its data are deleted too. The
         hosting provider's backups are overwritten according to its schedule.</p>
