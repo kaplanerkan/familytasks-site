@@ -38,6 +38,10 @@
           Zugriff erlaubst, liest die App deine tägliche Schrittzahl aus Health Connect (Android) bzw. Apple Health
           (iPhone). Gespeichert wird nur die Tagessumme für diese Aufgabe; andere Gesundheitsdaten werden weder
           gelesen noch geschrieben.</li>
+        <li><b>Standort (Familienkarte, freiwillig):</b> Nur wenn du zustimmst, wird dein <b>letzter</b> Standort
+          (Breiten-/Längengrad, Genauigkeit, Zeitpunkt) gespeichert und regelmäßig aktualisiert – auch bei geschlossener
+          App, wenn du das in den Systemeinstellungen erlaubst. Es wird kein Verlauf gespeichert; jede neue Position
+          ersetzt die vorherige.</li>
         <li><b>„Gesehen“:</b> wann ein Familienmitglied eine Aufgabe oder einen Einkaufsartikel zum ersten Mal gesehen hat.</li>
         <li><b>Benachrichtigungen:</b> eine Gerätekennung für Push-Benachrichtigungen (Firebase bzw. Apple) und die
           gewählte Sprache, damit Familien-Benachrichtigungen dein Gerät erreichen.</li>
@@ -56,11 +60,16 @@
         (Art. 9 Abs. 2 lit. a DSGVO), die du mit der Erlaubnis in Health Connect bzw. Apple Health erteilst. Du kannst
         sie dort jederzeit widerrufen; dann werden keine Schritte mehr gelesen. Die Schritte werden nicht für Werbung,
         Analyse oder andere Zwecke verwendet und nicht an Dritte weitergegeben.</p>
+      <p>Den Standort teilst du nur mit deiner ausdrücklichen Einwilligung (Art. 6 Abs. 1 lit. a DSGVO): Die App fragt
+        einmalig, und erst nach „Ja, teilen“ sowie der Standortberechtigung des Systems wird er übertragen. Du kannst
+        die Einwilligung jederzeit unter Einstellungen → Konto und Familie → „Meinen Standort mit der Familie teilen“
+        widerrufen; dein gespeicherter Standort wird dann sofort gelöscht. Bei Kindern entscheiden die Eltern.</p>
 
       <h2>4. Wer deine Daten sieht</h2>
       <p>Aufgaben sind für die Mitglieder deiner Familie sichtbar. Für jede Ausgabe und jeden Erlös wählst du,
         wer sie sieht: die ganze Familie (nur Mitglieder mit Kassenbuch-Freigabe), ausgewählte Personen oder nur du.
         Deine tägliche Schrittzahl für eine Schrittziel-Aufgabe sieht deine Familie (wer wie viel gelaufen ist).
+        Deinen Standort sehen nur die Familienmitglieder, die ihren eigenen Standort ebenfalls teilen.
         Personen außerhalb deiner Familie haben keinen Zugriff; das wird auf dem Server durchgesetzt.</p>
 
       <h2>5. Dienstleister (Auftragsverarbeiter)</h2>
@@ -79,6 +88,11 @@
           Werbe- oder Tracking-Cookies gesetzt (Art. 6 Abs. 1 lit. f DSGVO, berechtigtes Interesse am Schutz vor Missbrauch).
           Cloudflare ist nach dem EU-US Data Privacy Framework zertifiziert. Die Anmeldung mit Google oder Apple nutzt
           Turnstile nicht.</li>
+        <li><b>Kartendienste:</b> Die Familienkarte nutzt auf Android Google Maps (Google Ireland Ltd.) und auf dem
+          iPhone Apple Maps (Apple Distribution International Ltd.). Beim Anzeigen der Karte lädt dein Gerät
+          Kartenausschnitte vom jeweiligen Anbieter; dabei erhält dieser technische Daten wie IP-Adresse und den
+          angezeigten Kartenbereich. Den Standort ermittelt das Betriebssystem deines Geräts (unter Android über die
+          Google Play-Dienste).</li>
       </ul>
       <p>Texterkennung auf Belegen (Google ML Kit bzw. Apple Vision) und das Scannen des Einladungs-QR-Codes
         laufen direkt auf deinem Gerät; Bilder werden dafür nicht an Google oder Apple gesendet. Die Schrittzahl liest
@@ -93,7 +107,7 @@
 
       <h2>7. Speicherdauer und Löschung</h2>
       <p>Deine Daten bleiben gespeichert, solange dein Konto besteht. Unter <b>Einstellungen → Konto löschen</b>
-        löschst du dein Konto selbst: Konto, Profil, Feedback, Schrittzahlen, „Gesehen“-Einträge und
+        löschst du dein Konto selbst: Konto, Profil, Feedback, Standort, Schrittzahlen, „Gesehen“-Einträge und
         Gerätekennungen für Benachrichtigungen sowie alle Einträge, die nur du oder von dir
         ausgewählte Personen sehen, werden mit ihren Dateien gelöscht. Mit der Familie geteilte Einträge bleiben für
         die Familie erhalten, aber ohne deinen Namen und deine E-Mail-Adresse. Ist niemand mehr in der Familie, wird
@@ -134,6 +148,9 @@
         <li><b>Adım hedefi (sağlık verisi, isteğe bağlı):</b> Yalnızca adım hedefli bir görevin varsa ve izin verirsen
           uygulama günlük adım sayını Health Connect'ten (Android) ya da Apple Sağlık'tan (iPhone) okur. Yalnızca o
           görevin günlük toplamı saklanır; başka hiçbir sağlık verisi okunmaz ya da yazılmaz.</li>
+        <li><b>Konum (aile haritası, isteğe bağlı):</b> Yalnızca onay verirsen <b>son</b> konumun (enlem/boylam,
+          doğruluk, zaman) saklanır ve düzenli güncellenir; sistem ayarlarında izin verirsen uygulama kapalıyken de.
+          Geçmiş tutulmaz; her yeni konum öncekinin yerini alır.</li>
         <li><b>"Görüldü":</b> bir aile üyesinin bir görevi ya da alışveriş maddesini ilk ne zaman gördüğü.</li>
         <li><b>Bildirimler:</b> aile bildirimlerinin cihazına ulaşması için bir bildirim cihaz kimliği (Firebase ya da
           Apple) ve seçtiğin dil.</li>
@@ -150,11 +167,14 @@
       <p>Adım sayısı bir sağlık verisidir. Yalnızca açık rızanla işlenir (DSGVO md. 9/2-a); rızanı Health Connect ya da
         Apple Sağlık'ta izin vererek verirsin ve oradan istediğin zaman geri alabilirsin, o zaman adım okunmaz. Adımlar
         reklam, analiz ya da başka bir amaçla kullanılmaz ve üçüncü kişilere verilmez.</p>
+      <p>Konumunu yalnızca açık rızanla paylaşırsın (DSGVO md. 6/1-a): uygulama bir kez sorar; konum ancak "Evet,
+        paylaş" ve sistemin konum izninden sonra gönderilir. Rızanı Ayarlar → Hesap ve aile → "Konumumu aileyle paylaş"
+        ile istediğin an geri alabilirsin; kayıtlı konumun o an silinir. Çocuklar için kararı ebeveynler verir.</p>
 
       <h2>4. Verilerini kim görür</h2>
       <p>Görevleri ailenin üyeleri görür. Her gider ve gelir için kimin göreceğini sen seçersin: bütün aile (yalnızca
         kasa izni olan üyeler), seçtiğin kişiler ya da yalnızca sen. Adım hedefli bir görevdeki günlük adım sayını
-        ailen görür (kim ne kadar yürüdü). Ailenin dışından kimse erişemez; bu sunucuda zorunlu tutulur.</p>
+        ailen görür (kim ne kadar yürüdü). Konumunu yalnızca kendi konumunu da paylaşan aile üyeleri görür. Ailenin dışından kimse erişemez; bu sunucuda zorunlu tutulur.</p>
 
       <h2>5. Hizmet sağlayıcılar</h2>
       <ul>
@@ -170,6 +190,10 @@
           IP adresi kısa süre kontrol edilir; reklam ya da takip çerezi kullanılmaz (DSGVO md. 6/1-f, kötüye kullanıma
           karşı korunmada meşru menfaat). Cloudflare, AB-ABD Veri Gizliliği Çerçevesi'ne göre sertifikalıdır. Google ya da
           Apple ile girişte Turnstile kullanılmaz.</li>
+        <li><b>Harita servisleri:</b> Aile haritası Android'de Google Haritalar'ı (Google Ireland Ltd.), iPhone'da Apple
+          Haritalar'ı (Apple Distribution International Ltd.) kullanır. Harita gösterilirken cihazın harita parçalarını
+          ilgili sağlayıcıdan indirir; sağlayıcı bu sırada IP adresi ve gösterilen harita bölgesi gibi teknik verileri
+          alır. Konumu cihazının işletim sistemi belirler (Android'de Google Play hizmetleri üzerinden).</li>
       </ul>
       <p>Fişlerdeki metnin okunması (Google ML Kit ya da Apple Vision) ve davet QR kodunun okutulması doğrudan
         cihazında çalışır; bunun için resimler Google'a ya da Apple'a gönderilmez. Adım sayısını uygulama doğrudan
@@ -182,7 +206,7 @@
 
       <h2>7. Saklama süresi ve silme</h2>
       <p>Verilerin hesabın durdukça saklanır. <b>Ayarlar → Hesabımı sil</b> ile hesabını kendin silebilirsin: hesap,
-        profil, geri bildirimler, adım sayıları, "görüldü" kayıtları, bildirim cihaz kimlikleri ve yalnızca senin ya da seçtiğin kişilerin gördüğü bütün kayıtlar dosyalarıyla
+        profil, geri bildirimler, konum, adım sayıları, "görüldü" kayıtları, bildirim cihaz kimlikleri ve yalnızca senin ya da seçtiğin kişilerin gördüğü bütün kayıtlar dosyalarıyla
         birlikte silinir. Aileyle paylaştığın kayıtlar aile için kalır, ama adın ve e-posta adresin olmadan. Ailede
         başka kimse kalmazsa aile de bütün verisiyle silinir. Barındırma hizmetinin yedekleri kendi sürelerine göre
         üzerine yazılır.</p>
@@ -219,6 +243,9 @@
         <li><b>Step goal (health data, optional):</b> Only if you have a task with a step goal and allow access, the
           app reads your daily step count from Health Connect (Android) or Apple Health (iPhone). Only the daily total
           for that task is stored; no other health data is read or written.</li>
+        <li><b>Location (family map, optional):</b> Only if you agree, your <b>latest</b> location (latitude/longitude,
+          accuracy, time) is stored and updated regularly – also while the app is closed if you allow that in the system
+          settings. No history is kept; each new position replaces the previous one.</li>
         <li><b>"Seen":</b> when a family member first saw a task or a shopping item.</li>
         <li><b>Notifications:</b> a push notification device token (Firebase or Apple) and your chosen language, so
           family notifications reach your device.</li>
@@ -236,11 +263,16 @@
         give by granting access in Health Connect or Apple Health. You can withdraw it there at any time; steps are then
         no longer read. Steps are not used for advertising, analytics or any other purpose and are not shared with
         third parties.</p>
+      <p>You share your location only with your explicit consent (Art. 6(1)(a) GDPR): the app asks once, and the location
+        is sent only after "Yes, share" and the system's location permission. You can withdraw your consent at any time
+        under Settings → Account and family → "Share my location with the family"; your stored location is then deleted
+        immediately. For children, the parents decide.</p>
 
       <h2>4. Who sees your data</h2>
       <p>Tasks are visible to the members of your family. For each expense and income you choose who sees it: the
         whole family (only members with cash book access), selected people or only you. Your daily step count for a
-        step goal task is visible to your family (who walked how much). Nobody outside your family has access; this is
+        step goal task is visible to your family (who walked how much). Your location is visible only to family members
+        who share their own location too. Nobody outside your family has access; this is
         enforced on the server.</p>
 
       <h2>5. Service providers (processors)</h2>
@@ -257,6 +289,10 @@
           browser and your IP address are briefly checked to tell humans from bots; no advertising or tracking cookies are
           set (Art. 6(1)(f) GDPR, legitimate interest in preventing abuse). Cloudflare is certified under the EU-US Data
           Privacy Framework. Signing in with Google or Apple does not use Turnstile.</li>
+        <li><b>Map services:</b> The family map uses Google Maps (Google Ireland Ltd.) on Android and Apple Maps (Apple
+          Distribution International Ltd.) on the iPhone. When the map is shown, your device loads map tiles from that
+          provider, which receives technical data such as your IP address and the map area shown. Your location is
+          determined by your device's operating system (on Android via Google Play services).</li>
       </ul>
       <p>Reading text on receipts (Google ML Kit or Apple Vision) and scanning the invite QR code run directly on your
         device; images are not sent to Google or Apple for this. The app reads your step count directly from Health
@@ -270,7 +306,7 @@
 
       <h2>7. Retention and deletion</h2>
       <p>Your data is kept as long as your account exists. Under <b>Settings → Delete account</b> you can delete your
-        account yourself: your account, profile, feedback, step counts, "seen" records, notification device tokens and
+        account yourself: your account, profile, feedback, location, step counts, "seen" records, notification device tokens and
         all entries that only you or people you selected can see
         are deleted together with their files. Entries you shared with the family stay with the family, but without your
         name and email address. If nobody else is left in the family, the family and all its data are deleted too. The
